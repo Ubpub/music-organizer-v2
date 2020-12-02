@@ -84,13 +84,24 @@ public class MusicOrganizer
     }
     
     /**
-     * Get all files
+     * List all files
      */
     public void listAllFiles() {
         int position = 0;
         for (String filename : files) {
             position = position + 1;
             System.out.println(position + ". " + filename);
+        }
+    }
+    
+    /**
+     * Search file with a String
+     */
+    public void listMatching(String searchString) {
+        for (String filename : files) {
+            if (filename.contains(searchString)) {
+                System.out.println(filename);
+            }
         }
     }
 }
