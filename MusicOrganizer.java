@@ -109,4 +109,15 @@ public class MusicOrganizer
             System.out.println("No se ha encontrado ningún archivo con ese nombre");
         }
     }
+    
+    /**
+     * Play first seconds of a song
+     */
+    public void playSamplesArtist(String artist) {
+        for (String filename : files) {
+            if (filename.contains(artist)) {
+                player.playSample(filename);
+            }
+        }
+    }
 }
