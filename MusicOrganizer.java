@@ -98,10 +98,15 @@ public class MusicOrganizer
      * Search file with a String
      */
     public void listMatching(String searchString) {
+        int error = 0;
         for (String filename : files) {
             if (filename.contains(searchString)) {
                 System.out.println(filename);
+                error = error + 1;
             }
+        }
+        if (error == 0) {
+            System.out.println("No se ha encontrado ningún archivo con ese nombre");
         }
     }
 }
