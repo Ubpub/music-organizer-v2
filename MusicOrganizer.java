@@ -87,10 +87,10 @@ public class MusicOrganizer
      * List all files
      */
     public void listAllFiles() {
-        int position = 0;
-        for (String filename : files) {
-            position = position + 1;
-            System.out.println(position + ". " + filename);
+        int number = 0;
+        while(number < files.size()) {
+            System.out.println(files.get(number));
+            number++;
         }
     }
     
@@ -98,14 +98,14 @@ public class MusicOrganizer
      * Search file with a String
      */
     public void listMatching(String searchString) {
-        int error = 0;
+        int foundSongs = 0;
         for (String filename : files) {
             if (filename.contains(searchString)) {
                 System.out.println(filename);
-                error = error + 1;
+                foundSongs = foundSongs + 1;
             }
         }
-        if (error == 0) {
+        if (foundSongs == 0) {
             System.out.println("No se ha encontrado ningún archivo con ese nombre");
         }
     }
@@ -120,4 +120,7 @@ public class MusicOrganizer
             }
         }
     }
+    
+    //Si se quiere remover una canción con un bucle for-each no 
+    //será posible ya que daría error
 }
