@@ -87,10 +87,12 @@ public class MusicOrganizer
      * List all files
      */
     public void listAllFiles() {
-        int number = 0;
-        while(number < files.size()) {
-            System.out.println(files.get(number));
-            number++;
+        int index = 0;
+        int number = 1;
+        while(index < files.size()) {
+            System.out.println(number + ". " + files.get(index));
+            index++;
+            number = number + 1;
         }
     }
     
