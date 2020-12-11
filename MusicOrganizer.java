@@ -123,6 +123,31 @@ public class MusicOrganizer
         }
     }
     
+    /**
+     * Localiza el índice del primer archivo que se corresponde con
+     * la cadena indicada.
+     * @param searchString La cadena que hay que buscar.
+     * @return El índice de la primera aparición o -1 si
+     * no se encuentra ninguna correspondencia
+     */
+    public int findFirst(String searchString) {
+        int index = 0;
+        int result = -1;
+        boolean notFound = true;
+        while (notFound && (index < files.size())) {
+            if (files.get(index).contains(searchString)) {
+                notFound = false;
+            }
+            else {
+                index = index + 1;
+            }
+        }
+        if (index < files.size()) {
+            result = index;
+        }
+        return result;
+    }
+    
     //Si se quiere remover una canción con un bucle for-each no 
     //será posible ya que daría error
 }
