@@ -137,13 +137,9 @@ public class MusicOrganizer
         while (notFound && (index < files.size())) {
             if (files.get(index).contains(searchString)) {
                 notFound = false;
+                result = index;
             }
-            else {
-                index = index + 1;
-            }
-        }
-        if (index < files.size()) {
-            result = index;
+            index = index + 1;
         }
         return result;
     }
